@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var canvas = "";
+  var myChart;
   $('#myTab a').on('click', function (e) {
     e.preventDefault()
     $(this).tab('show')
@@ -32,31 +32,25 @@ $(document).ready(function () {
       data: { 'datainicial': datainicial, 'datafinal': datafinal },
       // Após carregar, coloca a lista dentro do select de categorias.
       success: function (data) {
-        //$('#barChart').get(0).getContext('2d')
         meses = [];
         valores = [];
         for (var i = 0; i < data.length; i++) {
           meses.push(data[i]['Mes'] + "/" + data[i]['Ano']);
           valores.push(data[i]['Quantidade']);
         }
-        desenhaGrafico("doacao", meses, valores);
+        desenhaGrafico("grafico", meses, valores);
       },
       error: function (xhr, status, error, data) {
-        alert("Grafico 1:" + error);
+        alert("Grafico:" + error);
       },
     });
   }
   function desenhaGrafico(id, meses, resultado) {
-    if(canvas != ""){
-      if (id == "doacao") {
-        $('#chart').empty();
-        $('#chart').append("<canvas id='doacao style='height: 400px; width: 650px;' class='img-fluid'></canvas>");
-        canvas = "";
-      }
+    var canvas = document.getElementById(id).getContext('2d');
+    if (myChart) {
+      myChart.destroy();
     }
-    canvas = document.getElementById(id);
-
-    var myChart = new Chart(canvas, {
+    myChart = new Chart(canvas, {
       type: 'bar',
       data: {
         labels: [],
@@ -65,11 +59,11 @@ $(document).ready(function () {
           borderWidth: 1,
           backgroundColor: 'rgba(60,141,188,0.9)',
           borderColor: 'rgba(60,141,188,0.8)',
-          label: 'Quantidade Total',
+          label: 'Valor Total',
         }]
       },
       options: {
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: false,
         datasetFill: false,
         scales: {
@@ -81,10 +75,13 @@ $(document).ready(function () {
         }
       }
     });
-    for (var i = 0; i < meses.length; i++) {
-      myChart.data.labels.push(meses[i]);
-      myChart.data.datasets[0].data.push(resultado[i]);
-      myChart.update();
+    addData();
+    function addData() {
+      for (var i = 0; i < meses.length; i++) {
+        myChart.data.labels.push(meses[i]);
+        myChart.data.datasets[0].data.push(resultado[i]);
+        myChart.update();
+      }
     }
   }
 });

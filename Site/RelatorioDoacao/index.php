@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="css/adminlte.min.css" />
     <link rel="stylesheet" href="../menu.css">
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <title>Relatório de Doações</title>
 </head>
 
@@ -71,7 +72,7 @@
                     </table>
                 </div>
                 <div class="tab-pane" id="graficos" role="tabpanel" aria-labelledby="profile-tab">
-                    <?php include('graficos.html'); ?>
+                    <?php require('graficos.html'); ?>
                 </div>
             </div>
         </div>
@@ -83,7 +84,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="js/tabela.js"></script>
-    <script type="text/javascript" src="chart.js/Chart.min.js"></script>
     <script type="text/javascript" src="js/abas.js"></script>
     <script type="text/javascript" src="js/impressao.js"></script>
 </body>
