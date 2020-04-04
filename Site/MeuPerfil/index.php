@@ -27,29 +27,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../menu.css" />
+    <link rel="stylesheet" href="../Menu/menu.css" />
+    <link rel="icon" href="../Menu/logoigreja.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="estilo.css">
     <title>Meu perfil</title>
 </head>
 
 <body>
-    <main>
-        <?php include '../menu.php'; ?>
-        <div class="container primary">
-            <div class="display-4 text-left">
-                <h1>Meu perfil</h1>
-                <hr />
-            </div>
-
-            <div class="col-12 col-lg-6 text-left">
-                <img src="user.png" id="user" class="img-fluid card-img-top" alt="">
-                <label class="col-12 px-0"><strong>Nome: </strong><?php echo $nome;?></label>
-                <label class="col-12 px-0"><strong>Email: </strong><?php echo $email;?></label>
-                <label class="col-12 px-0"><strong>Tipo de usuário: </strong><?php echo $tipo_usuario;?></label>
-                <button type="submit" class="btn btn-lg btn-outline-info m-4"><a href="atualizarPerfil">Alterar
-                        dados</a></button>
-            </div>
-
+    <?php require '../Menu/menu.php'; ?>
+    <main class="container primary">
+        <div class="display-4 text-left">
+            <h1>Meu perfil</h1>
+            <hr />
+        </div>
+        <div class="col-12 col-lg-6 text-left">
+            <img src="user.png" id="user" class="img-fluid card-img-top" alt="">
+            <label class="col-12 px-0"><strong>Nome: </strong><?php echo $nome;?></label>
+            <label class="col-12 px-0"><strong>Email: </strong><?php echo $email;?></label>
+            <label class="col-12 px-0"><strong>Tipo de usuário: </strong><?php echo $tipo_usuario;?></label>
+            <button type="submit" class="btn btn-lg btn-outline-info m-4"><a href="../AtualizarPerfil">Alterar
+                    dados</a></button>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

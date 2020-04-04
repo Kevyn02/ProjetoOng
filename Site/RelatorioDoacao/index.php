@@ -15,25 +15,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/adminlte.min.css" />
-    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="../Menu/menu.css" />
+    <link rel="icon" href="../Menu/logoigreja.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="css/estilos.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <title>Relatório de Doações</title>
 </head>
 
 <body>
-    <?php include '../menu.php';?>
-    <div class="container">
-        <div>
-            <div class="container text-center col primary">
-                <div class="display-4 mt-5 text-left">
-                    <h1>Relatório de Doações</h1>
-                    <hr />
-                </div>
-            </div>
+    <?php require '../Menu/menu.php';?>
+    <main class="container primary text-left">
+        <div class="text-left display-4 my-2">
+            <h1>Relatório de Doações</h1>
+            <hr />
         </div>
-        <form action="" class="form-inline mb-4">
+        <form class="form-inline mb-4">
             <div class="form-group ">
                 <label for="datainicial" class="mx-2">Data Inicial: </label>
                 <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
@@ -76,14 +72,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="js/tabela.js"></script>
+    <script type="text/javascript" src="chart.js/Chart.min.js"></script>
+    <script type="text/javascript" src="js/tabela.js"></script>
     <script type="text/javascript" src="js/abas.js"></script>
     <script type="text/javascript" src="js/impressao.js"></script>
 </body>

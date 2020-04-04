@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="menu.css">
+    <link rel="icon" href="../Menu/logoigreja.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="css/estilo1.css">
     <script type="text/javascript" src="valida.js"></script>
     <title>Login</title>
@@ -44,11 +44,11 @@
 
             <div id="logocan" class="my-2 text-center">
                 <picture>
-                    <img class="img-fluid" width="200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
+                    <img class="img-fluid" width="200px" src="logocantinho.png" alt="Logo Cantinho Fraterno">
                 </picture>
             </div>
         </form>
-        
+
         <div class="modal fade modal-centered" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">

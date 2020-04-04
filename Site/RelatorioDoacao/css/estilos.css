@@ -11,7 +11,7 @@ input{
 button{
     margin-left: 142px;
 }
-.thead-light{
+.table .thead-light th{
     background-color: #B4D1FF;
 }
 p{
@@ -21,8 +21,4 @@ p{
 }
 .navbar-light{
     background-color: #D1ECFE!important;
-}
-#teste{
-    color: #008400;
-    color: #2222dd;
 }

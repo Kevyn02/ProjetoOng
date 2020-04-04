@@ -1,11 +1,10 @@
 <?php
     include('../database/conn.php');
-
     if(isset($_POST['datainicial']) && $_POST['datainicial'] != ""){
         $datainicial = $_POST['datainicial'];
     }
     else{
-        $datainicial = date('2000/01/01');
+        $datainicial = date('Y').'/'.date('m').'/1';
     }
     if(isset($_POST['datafinal']) && $_POST['datafinal'] != ""){
         $datafinal = $_POST['datafinal'];

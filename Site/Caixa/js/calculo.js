@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    pegaValorEImagem(0);
+    pegaProdutos();
     $('#codigo').change(function () {
         pegaValorEImagem(0);
     });
@@ -10,8 +10,8 @@ $(document).ready(function () {
         $('#compra').empty();
         pegaValorEImagem(0);
     });
-    $('#compra').on("click", ".btn-remover", function(){
-        var id = '#'+$(this).val(); 
+    $('#compra').on("click", ".btn-remover", function () {
+        var id = '#' + $(this).val();
         $(id).remove();
         calculaCompra();
     });
@@ -100,7 +100,21 @@ $(document).ready(function () {
             }
         });
     }
-    
+    function pegaProdutos() {
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost/ProjetoOng/Site/Caixa/produtoPreco.php',
+            dataType: 'html',
+            beforeSend: function () {
+                $('#codigo').append("<option value='hint'>Carregando...</option>");
+            },
+            success: function (data) {
+                $('#codigo').empty();
+                $('#codigo').append(data);
+                pegaValorEImagem(0);
+            }
+        });
+    }
 });
 function enviarCompra() {
     var nome = document.getElementsByClassName('nome');

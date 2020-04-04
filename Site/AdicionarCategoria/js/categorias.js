@@ -12,7 +12,7 @@ $(document).ready(function () {
             type: 'POST',
             url: 'http://localhost/ProjetoOng/Site/AdicionarCategoria/categoria.php',
             dataType: 'html',
-            data: { 'texto': texto },
+            data: { 'texto': texto, 'pagina': 0 , 'codigo':""},
             // Após carregar, coloca a lista dentro do select de categorias.
             success: function (data) {
                 $('#categorias').empty();

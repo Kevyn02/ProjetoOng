@@ -1,5 +1,5 @@
 <?php
-    include('../../database/conn.php');
+    include('../database/conn.php');
     session_start();
     if(!isset($_SESSION['id_usuario'])){
         header('Location: ../Login');
@@ -26,41 +26,38 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../estilo.css" />
-    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="../Menu/menu.css" />
+    <link rel="icon" href="../Menu/logoigreja.png" type="image/png" sizes="16x16">
     <title>Formulário para atualização</title>
 </head>
 
 <body>
-    <?php include 'menu.php'; ?>
-    <div class="container text-center primary">
+    <?php require '../Menu/menu.php'; ?>
+    <main class="container primary">
         <div class="text-left display-4 my-2">
             <h1>Atualização dos dados</h1>
             <hr />
         </div>
-
-        <main>
-            <form action="update.php" method="POST" id="quickForm" class="col-12 col-lg-6">
-                <div class="form-group text-left">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" required value="<?php echo $linha['nome'] ?>" name="nome" id="nome">
-                </div>
-
-                <div class="form-group text-left">
-                    <label for="email">E-mail</label>
-                    <input type="text" class="form-control" required value="<?php echo $linha['email'] ?>" name="email" id="email">
-                </div>
-
-                <div class="form-group text-left">
-                    <label for="senha">Senha</label>
-                    <input type="password" class="form-control" required name="senha" id="senha">
-                </div>
-
-                <div>
-                    <button type="submit" class="btn btn-lg btn-outline-success my-4 mx-4">Salvar</button>
-                </div>
-            </form>
-        </main>
-    </div>
+        <form action="update.php" method="POST" id="quickForm" class="col-12 col-lg-6">
+            <div class="form-group text-left">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" required value="<?php echo $linha['nome'] ?>" name="nome"
+                    id="nome">
+            </div>
+            <div class="form-group text-left">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" required value="<?php echo $linha['email'] ?>" name="email"
+                    id="email">
+            </div>
+            <div class="form-group text-left">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" required name="senha" id="senha">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-lg btn-outline-success my-4 mx-4">Salvar</button>
+            </div>
+        </form>
+    </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>

@@ -15,25 +15,21 @@ if(!isset($_SESSION['id_usuario'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/adminlte.min.css" />
-    <link rel="stylesheet" href="../menu.css" />
+    <link rel="stylesheet" href="../Menu/menu.css" />
+    <link rel="icon" href="../Menu/logoigreja.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="css/estilos.css" />
     <script src="js/jquery-3.4.1.min.js"></script>
     <title>Relatório Financeiro</title>
 </head>
 
 <body>
-    <?php include "../menu.php"; ?>
-    <div class="container">
-        <div>
-            <div class="container text-center col primary">
-                <div class="display-4 my-2 text-left">
-                    <h1>Relatório Financeiro</h1>
-                    <hr />
-                </div>
-            </div>
+    <?php require "../Menu/menu.php"; ?>
+    <main class="container primary text-left">
+        <div class="text-left display-4 my-2">
+            <h1>Relatório Financeiro</h1>
+            <hr />
         </div>
-
-        <form action="" class="form-inline mb-4">
+        <form class="form-inline mb-4">
             <div class="form-group ">
                 <label for="datainicial" class="mx-2">Data Inicial: </label>
                 <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
@@ -44,28 +40,23 @@ if(!isset($_SESSION['id_usuario'])){
             </div>
             <button onclick="impressao();" class="btn btn-lg btn-outline-info mx-2">Imprimir</button>
         </form>
-
         <div>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                         aria-controls="home" aria-selected="true">Vendas</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invest" role="tab"
                         aria-controls="profile" aria-selected="false">Investimentos</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" id="grafico-tab" data-toggle="tab" href="#graficos" role="tab"
                         aria-controls="grafico" aria-selected="false">Gráficos</a>
                 </li>
             </ul>
-
             <div class="tab-content">
                 <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
                     <table class="table table-bordered table-hover rounded shadow">
                         <thead class="thead-light">
                             <tr>
@@ -81,7 +72,6 @@ if(!isset($_SESSION['id_usuario'])){
                         </tbody>
                     </table>
                 </div>
-
                 <div class="tab-pane" id="invest" role="tabpanel" aria-labelledby="profile-tab">
                     <table class="table table-bordered table-hover rounded shadow">
                         <thead class="thead-light">
@@ -95,14 +85,12 @@ if(!isset($_SESSION['id_usuario'])){
                         </tbody>
                     </table>
                 </div>
-
                 <div class="tab-pane" id="graficos" role="tabpanel" aria-labelledby="grafico-tab">
                     <?php include('graficos.html'); ?>
                 </div>
-
             </div>
         </div>
-    </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
@@ -113,7 +101,6 @@ if(!isset($_SESSION['id_usuario'])){
     <script type="text/javascript" src="chart.js/Chart.min.js"></script>
     <script type="text/javascript" src="js/abas.js"></script>
     <script type="text/javascript" src="js/impressao.js"></script>
-
 </body>
 
 </html>

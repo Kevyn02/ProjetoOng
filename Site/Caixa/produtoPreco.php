@@ -34,4 +34,17 @@
             echo $nome;
         }
     }
+    else{
+        $sql = "SELECT * FROM produtos";
+        $resultado = $conn->query($sql);
+        $numero = 1;
+        if($resultado->num_rows > 0){
+            while($linha = $resultado->fetch_assoc()){
+                $id= $linha['id_produto'];
+                $nome= $linha['nome'];
+                echo "<option value='$id'>$numero - $nome</option>";
+                $numero++;
+            }
+        }
+    }
 ?>

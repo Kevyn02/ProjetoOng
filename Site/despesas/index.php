@@ -10,25 +10,22 @@ if(!isset($_SESSION['id_usuario'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="../menu.css"/>
+    <link rel="stylesheet" href="../Menu/menu.css" />
+    <link rel="icon" href="../Menu/logoigreja.png" type="image/png" sizes="16x16">
     <title>Despesas</title>
 </head>
 <body>
-    <?php include '../menu.php'; ?>
-    <main>
-        <div class="container text-center primary">
+    <?php require '../Menu/menu.php'; ?>
+    <main class="container primary">
             <div class="text-left display-4 my-2">
                 <h1>Cadastro de despesas</h1>
                 <hr/>
             </div>
-
             <form action="insert.php" method="post" class="col-12 col-lg-6">
-
                 <div class="form-group text-left">
                     <label for="nome">Nome: </label>
                     <input type="text" class="form-control" id="nome" name="nome">
                 </div>
-
                 <div class="text-left">
                     <label for="valor" class="d-inline">Valor: </label>
                 </div>
@@ -38,7 +35,6 @@ if(!isset($_SESSION['id_usuario'])){
                     </div>
                     <input type="text" class="form-control real" step="any" name="valor" id="valor">
                 </div>
-
                 <div>
                     <button type="submit" class="btn btn-lg btn-outline-success mt-3">Confirmar</button>
                 </div>

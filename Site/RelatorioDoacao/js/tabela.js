@@ -27,7 +27,7 @@ $(document).ready(function () {
                     $('#table_doacoes').append(data);
                 }
                 else{
-                    $('#table_doacoes').append("<tr><td colspan='3'>Sem Resultados</td><tr>");
+                    $('#table_doacoes').append("<tr><td colspan='4'>Sem Resultados</td><tr>");
                 }
             }
         });
